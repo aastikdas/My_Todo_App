@@ -81,7 +81,7 @@ function App() {
         </div>
         <div className="input_wala flex justify-center items-center">
           <input onChange={handleChange} onKeyDown={(event) => event.key == "Enter" && handleAdd()} value={todo} type="text" className='w-[80%] bg-yellow-50 mx-2 rounded-lg px-3 py-1 min-h-10 active:border' />
-          <button onClick={handleAdd} disabled={todo.length < 3} className="btn-primary">Save</button>
+          <button onClick={handleAdd} disabled={todo.length < 3} className="btn-primary-save">Save</button>
 
         </div>
         <input type="checkbox" checked={showFinished} onChange={toggleFinished} name="" id="" /> Show only Finished
@@ -98,7 +98,9 @@ function App() {
                   </div>
               </div>
               <div className="buttons">
-                <button onClick={(e) => { handleEdit(e, item.id) }} className="btn-primary-edit w-20">Edit</button>
+                <button onClick={(e) => { handleEdit(e, item.id) }} className=" relative duration-1000 btn-primary-edit w-20 hover:bg-green-400 ">
+                Edit
+                </button>
                 <button onClick={(e) => { handleDelete(e, item.id) }} className="btn-primary-delete w-20">Delete</button>
               </div>
             </div>

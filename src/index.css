@@ -5,13 +5,40 @@
 @tailwind utilities;
 
 @layer components {
-  .btn-primary {
-    @apply bg-violet-600 text-white hover:bg-violet-800 rounded-md py-1 px-3 mx-4 hover:cursor-pointer font-semibold;
+  .btn-primary-save {
+    @apply bg-violet-700 text-white  rounded-md py-1 px-3 mx-4 hover:cursor-pointer font-semibold relative z-10;
   }
   .btn-primary-edit {
-    @apply bg-green-300 text-black  hover:bg-green-400 rounded-md py-1 px-3 mx-4 hover:cursor-pointer font-semibold;
+    @apply bg-green-300  text-black  rounded-md py-1 px-3 mx-4 hover:cursor-pointer font-semibold relative z-10;
   }
   .btn-primary-delete {
-    @apply bg-red-300 text-black hover:bg-red-400 rounded-md py-1 px-3 mx-4 hover:cursor-pointer font-semibold;
+    @apply bg-red-300 text-black rounded-md py-1 px-3 mx-4 hover:cursor-pointer font-semibold relative z-10;
+  }
+  .btn-primary-edit::before {
+    content: "";
+    @apply absolute top-0 left-0 bottom-0 right-0 bg-green-500 -z-10 transition-all origin-left rounded-md scale-x-0 duration-[1000ms] ease-in-out;
+  }
+  
+  .btn-primary-edit:hover::before {
+     @apply scale-x-100;
+    
+  }
+  .btn-primary-save::before {
+    content: "";
+    @apply absolute top-0 left-0 bottom-0 right-0 bg-violet-600 -z-10 transition-all origin-left rounded-md scale-x-0 duration-[1000ms] ease-in-out;
+  }
+  
+  .btn-primary-save:hover::before {
+     @apply scale-x-100;
+    
+  }
+  .btn-primary-delete::before {
+    content: "";
+    @apply absolute top-0 left-0 bottom-0 right-0 bg-red-400 -z-10 transition-all origin-left rounded-md scale-x-0 duration-[1000ms] ease-in-out;
+  }
+  
+  .btn-primary-delete:hover::before {
+     @apply scale-x-100;
+    
   }
 }
