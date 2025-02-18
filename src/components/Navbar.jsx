@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className='bg-slate-900 text-white p-2 mb-2 flex justify-between h-[10vh] items-center'>
       <div className="logo text-lg mx-4 flex gap-2 items-center">
         <div className="icon">
-          <img className='w-12 h-12 rounded-full  hover:cursor-pointer' src="./src/assets/svg/icon.svg" alt="Profile photo" />
+          <img className='w-12 h-12 rounded-full  hover:cursor-pointer' src="/icon.svg" alt="Profile photo" />
         </div>
         <div className="text font-bold">
           my_todos
