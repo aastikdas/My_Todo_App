@@ -75,7 +75,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className='container w-[70vw] mx-auto my-5 rounded-xl px-5 py-2 bg-violet-100 h-[80vh] overflow-y-scroll'>
+      <div className='container w-[70vw] mx-auto my-5 rounded-xl px-5 py-2 bg-violet-200 h-[80vh] overflow-y-scroll'>
         <div className="addTodo">
           <h2 className='text-lg font-bold text-center'>Add a Todo</h2>
         </div>

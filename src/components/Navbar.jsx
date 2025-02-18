@@ -5,10 +5,10 @@ const Navbar = () => {
     <nav className='bg-slate-900 text-white p-2 mb-2 flex justify-between h-[10vh] items-center'>
       <div className="logo text-lg mx-4 flex gap-2 items-center">
         <div className="icon">
-          <img className='w-12 h-12 rounded-full border-yellow-500 border-2 blur-[0.5px] hover:blur-none hover:cursor-pointer' src="./src/assets/images/pass_new.png" alt="Profile photo" />
+          <img className='w-12 h-12 rounded-full  hover:cursor-pointer' src="./src/assets/svg/icon.svg" alt="Profile photo" />
         </div>
         <div className="text font-bold">
-          i-task todo list
+          my_todos
         </div>
       </div>
       <div className="rightside w-[25vw] flex justify-between mx-4">
