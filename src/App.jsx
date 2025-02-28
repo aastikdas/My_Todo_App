@@ -75,7 +75,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className='container w-[70vw] mx-auto my-5 rounded-xl px-5 py-2 bg-violet-200 h-[80vh] overflow-y-scroll'>
+      <div className='container w-[90vw] sm:w-[80vw]  mx-auto my-5 rounded-xl px-5 py-2 bg-violet-200 h-[80vh] overflow-y-scroll'>
         <div className="addTodo">
           <h2 className='text-lg font-bold text-center'>Add a Todo</h2>
         </div>
@@ -97,11 +97,15 @@ function App() {
                     {item.todo}
                   </div>
               </div>
-              <div className="buttons">
-                <button onClick={(e) => { handleEdit(e, item.id) }} className=" relative duration-1000 btn-primary-edit w-20 hover:bg-green-400 ">
-                Edit
+              <div className="buttons w-[90%] ">
+                <button onClick={(e) => { handleEdit(e, item.id) }} className="relative duration-1000 btn-primary-edit w-12 sm:w-20 hover:bg-green-400 ">
+                <span class="sm:hidden"><img src="./src/svg/edit.svg" alt="" srcset="" /></span>
+                <span class="sm:inline hidden">Edit</span>
                 </button>
-                <button onClick={(e) => { handleDelete(e, item.id) }} className="btn-primary-delete w-20">Delete</button>
+                <button onClick={(e) => { handleDelete(e, item.id) }} className="btn-primary-delete w-12 sm:w-20">
+                <span class="sm:hidden"><img src="./src/svg/delete.svg" alt="" srcset="" /></span>
+                <span class="sm:inline hidden">Delete</span>
+                </button>
               </div>
             </div>
           })}

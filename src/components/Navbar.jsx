@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <nav className='bg-slate-900 text-white p-2 mb-2 flex justify-between h-[10vh] items-center'>
+    <nav className='bg-slate-900 text-white p-2 mb-2 flex justify-evenly h-20 items-center w-full'>
       <div className="logo text-lg mx-4 flex gap-2 items-center">
         <div className="icon">
           <img className='w-12 h-12 rounded-full  hover:cursor-pointer' src="/icon.svg" alt="Profile photo" />
