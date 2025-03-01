@@ -98,11 +98,11 @@ function App() {
               </div>
               <div className="buttons w-[90%] ">
                 <button onClick={(e) => { handleEdit(e, item.id) }} className="relative duration-1000 btn-primary-edit w-12 sm:w-20 hover:bg-green-400 ">
-                <span class="sm:hidden"><img src="./src/svg/edit.svg" alt="" srcset="" /></span>
+                <span class="sm:hidden"><img src="svg/edit.svg" alt="" srcset="" /></span>
                 <span class="sm:inline hidden">Edit</span>
                 </button>
                 <button onClick={(e) => { handleDelete(e, item.id) }} className="btn-primary-delete w-12 sm:w-20">
-                <span class="sm:hidden"><img src="./src/svg/delete.svg" alt="" srcset="" /></span>
+                <span class="sm:hidden"><img src="svg/delete.svg" alt="" srcset="" /></span>
                 <span class="sm:inline hidden">Delete</span>
                 </button>
               </div>
