@@ -66,7 +66,6 @@ function App() {
       return item.id === id;
     })
     let newTodos = [...todos];
-    // console.log(index)
     newTodos[index].isCompleted = !(newTodos[index].isCompleted);
     settodos(newTodos)
 
