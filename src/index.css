@@ -4,15 +4,19 @@
 
 @tailwind utilities;
 
+body{
+  background-color: #e8e8e4;
+}
+
 @layer components {
   .btn-primary-save {
     @apply bg-violet-700 text-white  rounded-md py-1 px-3 mx-4 hover:cursor-pointer font-semibold relative z-10;
   }
   .btn-primary-edit {
-    @apply bg-green-300  text-black  rounded-md py-1 px-3 mx-4 hover:cursor-pointer font-semibold relative z-10;
+    @apply bg-green-300  text-black  rounded-md py-1 sm:px-3 sm:mx-4 hover:cursor-pointer font-semibold relative z-10;
   }
   .btn-primary-delete {
-    @apply bg-red-300 text-black rounded-md py-1 px-3 mx-4 hover:cursor-pointer font-semibold relative z-10;
+    @apply bg-red-300 text-black rounded-md py-1 sm:px-3 mx-2 sm:mx-4 hover:cursor-pointer font-semibold relative z-10;
   }
   .btn-primary-edit::before {
     content: "";
