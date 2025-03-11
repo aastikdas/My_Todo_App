@@ -18,9 +18,14 @@ function App() {
     }
   }, []);
 
-  const saveToLS = (params) => {
-    localStorage.setItem("todos", JSON.stringify(todos))
-  }
+  const saveToLS = (updatedTodos) => {
+    if (Array.isArray(updatedTodos) && updatedTodos.length > 0) {
+        localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    } else {
+        localStorage.removeItem("todos"); // Remove it if empty to prevent issues
+    }
+};
+
 
   const toggleFinished = (params) => {
     setshowFinished(!showFinished)
@@ -48,7 +53,7 @@ function App() {
     settodos(newTodos)
     // ask for a confirm fucntion
 
-    saveToLS();
+    saveToLS(newTodos);
 
   }
   const handleAdd = () => {
