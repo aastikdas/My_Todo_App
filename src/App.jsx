@@ -101,12 +101,18 @@ function App() {
                 </div>
                 <div className="flex w-30 ">
                   <button onClick={(e) => { handleEdit(e, item.id) }} className="relative duration-1000 btn-primary-edit w-8 flex justify-center sm:w-20 hover:bg-green-400 ">
-                    <span class="sm:hidden "><img src="svg/edit.svg" alt="" srcset="" /></span>
-                    <span class="sm:inline hidden">Edit</span>
+                    <span class="default-img relative">
+                      <img src="pencil.png" class="default-img hover:opacity-0 absolute left-0px " alt="" srcset="" />
+                      <img src="pencil.gif" class="hover-img" alt="" srcset="" />
+                    </span>
+                    {/* <span class="sm:inline hidden">Edit</span> */}
                   </button>
                   <button onClick={(e) => { handleDelete(e, item.id) }} className="btn-primary-delete w-8 flex justify-center sm:w-20">
-                    <span className="sm:hidden"><img src="svg/delete.svg" alt="" srcset="" /></span>
-                    <span className="sm:inline hidden">Delete</span>
+                  <span class="default-img relative">
+                      <img src="trash.png" class="default-img hover:opacity-0 absolute left-0 " alt="" srcset="" />
+                      <img src="trash.gif" class="hover-img" alt="" srcset="" />
+                    </span>
+                    {/* <span className="sm:inline hidden">Delete</span> */}
                   </button>
                 </div>
               </div>
