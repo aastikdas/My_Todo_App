@@ -16,15 +16,15 @@ function App() {
       let todos = JSON.parse(localStorage.getItem("todos"))
       settodos(todos)
     }
-  }, []);
+  }, [todos]);
 
   const saveToLS = (updatedTodos) => {
     if (Array.isArray(updatedTodos) && updatedTodos.length > 0) {
-        localStorage.setItem("todos", JSON.stringify(updatedTodos));
+      localStorage.setItem("todos", JSON.stringify(updatedTodos));
     } else {
-        localStorage.removeItem("todos"); // Remove it if empty to prevent issues
+      localStorage.removeItem("todos"); // Remove it if empty to prevent issues
     }
-};
+  };
 
 
   const toggleFinished = (params) => {
@@ -41,12 +41,12 @@ function App() {
     });
     settodos(newTodos)
 
-    saveToLS();
+    saveToLS(newTodos);
   }
 
   const handleDelete = (e, id) => {
 
-    alert("Do you confirm for Deletion")
+    alert("Deletion Completed")
     let newTodos = todos.filter(item => {
       return item.id != id
     });
@@ -57,10 +57,15 @@ function App() {
 
   }
   const handleAdd = () => {
-    settodos([...todos, { id: uuidv4(), todo, isCompleted: false }])
-    settodo("")
-
-    saveToLS();
+    if (todo.length >= 4) {
+      const newtodos = ([...todos, { id: uuidv4(), todo, isCompleted: false }])
+      settodos(newtodos)
+      settodo("")
+      saveToLS(newtodos);
+    }
+    else {
+      alert("Task is not of sufficient length")
+    }
   }
   const handleChange = (e) => {
     settodo(e.target.value)
@@ -86,8 +91,7 @@ function App() {
           </div>
           <div className="input_wala flex justify-center items-center">
             <input onChange={handleChange} onKeyDown={(event) => event.key == "Enter" && handleAdd()} value={todo} type="text" className='w-[80%] bg-yellow-50 mx-2 rounded-lg px-3 py-1 min-h-10 active:border' />
-            <button onClick={handleAdd} disabled={todo.length < 3} className="btn-primary-save">Save</button>
-
+            <button onClick={handleAdd} className="btn-primary-save">Save</button>
           </div>
         </div>
         <input type="checkbox" checked={showFinished} onChange={toggleFinished} name="" id="" /> Show only Finished
@@ -113,7 +117,7 @@ function App() {
                     {/* <span class="sm:inline hidden">Edit</span> */}
                   </button>
                   <button onClick={(e) => { handleDelete(e, item.id) }} className="btn-primary-delete w-8 flex justify-center sm:w-20">
-                  <span class="default-img relative">
+                    <span class="default-img relative">
                       <img src="trash.png" class="default-img hover:opacity-0 absolute left-0 " alt="" srcset="" />
                       <img src="trash.gif" class="hover-img" alt="" srcset="" />
                     </span>
